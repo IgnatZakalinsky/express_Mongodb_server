@@ -1,0 +1,5 @@
+Nodejs command prompt
+npm i -g nodemon
+npm i express
+npm i cors
+nodemon --inspect ./index.js localhost 7542

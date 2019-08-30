@@ -1,3 +1,5 @@
+const {addUserMongo, getUsersMongo} = require("./mongoRep");
+
 let {getUsers, addUser} = require('./rep.js');
 
 const express = require('express');
@@ -9,7 +11,9 @@ router.use(function timeLog(req, res, next) {
     next();
 });
 router.get('/', async (req, res) => {
-    let users = await getUsers();
+    //let users = await getUsers();
+    let users = await getUsersMongo();
+
     if (req.query.name) users = users.find(u => u.name === req.query.name);
     console.log(req.query.name);
 
@@ -30,6 +34,9 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     console.log(req.body.name);
     let result = await addUser(req.body.name);
+
+
+    await addUserMongo(req.body.name);
     res.send(JSON.stringify({success: true}));
 });
 

@@ -8,6 +8,11 @@ const users = require('./usersController');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true});
+
+
+
 app.use(cors());
 
 // parse application/x-www-form-urlencoded

@@ -1,5 +1,9 @@
-Nodejs command prompt
+npm init...
 npm i -g nodemon
 npm i express
 npm i cors
+npm i body-parser
+npm i mongoose
+
 nodemon --inspect ./index.js localhost 7542
+

@@ -10,8 +10,7 @@ const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true});
-
-
+//automatic create db with name "my_database"
 
 app.use(cors());
 
@@ -33,11 +32,6 @@ app.listen(7542, function () {
     console.log('Example app listening on port 7542!');
 });
 console.log('start...');
-
-
-
-
-
 
 process.on('unhandledRejection', (reason, p) => {
    console.log(reason, p);
